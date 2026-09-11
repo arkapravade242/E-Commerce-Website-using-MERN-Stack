@@ -259,4 +259,25 @@ PURPOSE:
 This project was developed as a full-stack MERN E-Commerce application for learning, development, portfolio, and demonstration purposes.
 
 GITHUB SECURITY NOTE:
-The .env files are intentionally excluded from the repository because they contain private credentials and secret keys. Anyone who clones the project must create their own environment files and use their own MongoDB, Cloudinary, Stripe, JWT, and Admin configuration.
+The .env files are in
+tentionally excluded from the repository because they contain private credentials and secret keys. Anyone who clones the project must create their own environment files and use their own MongoDB, Cloudinary, 
+Stripe, JWT, and Admin configuration.
+
+FRONTEND/SRC/.env
+VITE_BACKEND_URL = http://localhost:4000
+VITE_RAZORPAY_KEY_ID = ''
+
+BACKEND/.env
+MONGODB_URI=mongodb+srv://arkapravade242_db_user:Gaming045@cluster0.xu4go6q.mongodb.net
+CLOUDINARY_API_KEY=225972115679939
+CLOUDINARY_SECRET_KEY=3on_TVz_f-0pEYXKj6wI8FZH7pE
+CLOUDINARY_NAME = e0tdymgm
+JWT_SECRET = Arka
+ADMIN_EMAIL = admin@arka.com
+ADMIN_PASSWORD = Abcd1234
+STRIPE_SECRET_KEY = "sk_test_51UEPuTRwOOcr91AdYkbhe34b10XAF0VSu73A0WyZ5g6zFEHQ3zyH4SeOAcmDiiFgMWbJYywcr41johh2dbrtllkV00xA9tfeNJ"
+RAZORPAY_KEY_SECRET = ''
+RAZORPAY_KEY_ID = ''
+
+ADMIN/.env
+VITE_BACKEND_URL = http://localhost:4000
