@@ -1,14 +1,14 @@
-Arka's E-Commerce Website:
+# Arka's E-Commerce Website
 
-A full-stack e-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The project features a responsive customer shopping website and a separate admin panel for product and order management.
+A full-stack e-commerce web application built using the **MERN stack (MongoDB, Express.js, React.js, and Node.js)**. The project features a responsive customer shopping website and a separate admin panel for product and order management.
 
-Overview:
+## Overview
 
 Arka's E-Commerce Website provides an online shopping experience where customers can browse products, search and filter collections, select sizes, manage shopping carts, place orders, and view order history. The administrative panel enables administrators to add products, upload product images, manage product listings, and update order statuses.
 
-Features:
+## Features
 
-Customer Website:
+### Customer Website
 
 * Responsive user interface for desktop and mobile devices.
 * User registration and login with JWT authentication.
@@ -22,7 +22,7 @@ Customer Website:
 * Order placement and order history.
 * Notifications using React Toastify.
 
-Admin Panel:
+### Admin Panel
 
 * Administrator login and protected operations.
 * Add new products with multiple images.
@@ -31,7 +31,7 @@ Admin Panel:
 * View customer orders.
 * Update order statuses.
 
-Backend and Security:
+### Backend and Security
 
 * RESTful APIs using Node.js and Express.js.
 * MongoDB database integration using Mongoose.
@@ -41,7 +41,7 @@ Backend and Security:
 * Middleware for authentication and request processing.
 * Environment variables for sensitive configuration.
 
-Technology Stack
+## Technology Stack
 
 | Category          | Technologies                               |
 | ----------------- | ------------------------------------------ |
@@ -57,9 +57,9 @@ Technology Stack
 | Development Tools | Vite, npm, Postman                         |
 | Configuration     | Environment variables                      |
 
-Project Structure:
+## Project Structure
 
-
+```text
 Arka-Ecommerce-Website/
 ├── admin/
 │   ├── src/
@@ -93,11 +93,11 @@ Arka-Ecommerce-Website/
 │   └── vite.config.js
 │
 └── README.md
+```
 
+*Note: The structure above is a representative layout. Adjust directory names and filenames to match your actual repository.*
 
-Note: The structure above is a representative layout. Adjust directory names and filenames to match your actual repository.
-
-Prerequisites:
+## Prerequisites
 
 Install the following before running the application:
 
@@ -107,25 +107,27 @@ Install the following before running the application:
 * Postman for API testing
 * Stripe and/or Razorpay credentials if configuring online payments
 
-Installation and Setup
+## Installation and Setup
 
-1. Clone the Repository
+### 1. Clone the Repository
 
+```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd <YOUR_PROJECT_FOLDER>
-
+```
 
 Replace the placeholders with your actual GitHub repository URL and project directory.
 
-2. Configure the Backend
+### 2. Configure the Backend
 
+```bash
 cd backend
 npm install
+```
 
+Create a `.env` file inside the backend directory and configure the following variables:
 
-Create a .env file inside the backend directory and configure the following variables:
-
-
+```env
 PORT=4000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
@@ -138,59 +140,64 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_SECRET_KEY=your_cloudinary_api_secret
 
 STRIPE_SECRET_KEY=your_stripe_secret_key
-
+```
 
 Use the exact environment variable names expected by your backend code. Configure additional payment variables if required by your Razorpay implementation.
 
 Start the backend:
+
+```bash
 npm run server
+```
 
+If your project uses a different script, check the `scripts` section in `backend/package.json`.
 
-If your project uses a different script, check the scripts section in backend/package.json.
+The backend runs on `http://localhost:4000` by default.
 
-The backend runs on http://localhost:4000 by default.
-
-3. Configure the Customer Frontend
+### 3. Configure the Customer Frontend
 
 Open a new terminal:
 
+```bash
 cd frontend
 npm install
+```
 
+Create a `.env` file in the frontend directory:
 
-Create a .env file in the frontend directory:
-
-
+```env
 VITE_BACKEND_URL=http://localhost:4000
 VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
-
+```
 
 Start the frontend:
-npm run dev
 
+```bash
+npm run dev
+```
 
 Open the local URL displayed by Vite in your terminal.
 
-4. Configure the Admin Panel
+### 4. Configure the Admin Panel
 
 Open another terminal:
 
-bash
+```bash
 cd admin
 npm install
-
+```
 
 Create the appropriate frontend environment file if required by your admin application. Configure its backend URL using the environment variable referenced in the admin code.
 
 Start the admin panel:
 
-
+```bash
 npm run dev
-
+```
 
 Open the local URL displayed by Vite. If the customer frontend and admin panel use the same default port, Vite will select another available port or display a port-conflict message.
 
-API Endpoints
+## API Endpoints
 
 The backend groups its APIs into four main modules.
 
@@ -221,15 +228,15 @@ Examples of endpoints defined in the backend include:
 
 All endpoints should be used with the HTTP methods and authentication requirements defined in the actual route files.
 
-Database Models
+## Database Models
 
 The application uses MongoDB collections managed through Mongoose models.
 
-* User: Stores customer information, email, hashed password, and cart data.
-* Product: Stores product names, descriptions, prices, image URLs, categories, subcategories, sizes, and bestseller information.
-Order: Stores customer references, purchased items, total amount, delivery address, order status, payment method, payment status, and order date.
+* **User:** Stores customer information, email, hashed password, and cart data.
+* **Product:** Stores product names, descriptions, prices, image URLs, categories, subcategories, sizes, and bestseller information.
+* **Order:** Stores customer references, purchased items, total amount, delivery address, order status, payment method, payment status, and order date.
 
-Testing
+## Testing
 
 Use Postman to test the backend APIs and verify:
 
@@ -240,7 +247,7 @@ Use Postman to test the backend APIs and verify:
 * Order creation and order-history retrieval.
 * Payment initiation and server-side payment verification.
 
-Security Notes
+## Security Notes
 
 * Never commit `.env` files, passwords, API secrets, or private keys to GitHub.
 * Use `.env.example` with placeholder values to document required configuration.
@@ -249,9 +256,9 @@ Security Notes
 * Apply appropriate authorization checks to administrative endpoints.
 * Use secure token handling and appropriate token expiration.
 
-Important: The online payment workflows require complete server-side verification and testing before production use. In particular, Stripe payment status should not be trusted solely from a frontend success parameter, and Razorpay server-side initialization and signature verification must be configured correctly.
+**Important:** The online payment workflows require complete server-side verification and testing before production use. In particular, Stripe payment status should not be trusted solely from a frontend success parameter, and Razorpay server-side initialization and signature verification must be configured correctly.
 
-Future Enhancements
+## Future Enhancements
 
 * Improve payment verification and error handling.
 * Add automated backend and frontend tests.
@@ -261,14 +268,16 @@ Future Enhancements
 * Deploy the frontend, admin panel, and backend to cloud hosting.
 * Add order tracking and enhanced customer account management.
 
-Learning Outcomes:
+## Learning Outcomes
 
 This project provides practical experience in full-stack web development, React component design, state management, REST API development, MongoDB data modeling, authentication, image upload integration, payment workflows, API testing, and modular application architecture.
 
-Author: Arka
+## Author
+
+**Arka**
 
 Full-Stack Web Development Project
 
 ---
 
-Built with the MERN stack to demonstrate practical full-stack development skills and e-commerce application functionality.
+*Built with the MERN stack to demonstrate practical full-stack development skills and e-commerce application functionality.*
